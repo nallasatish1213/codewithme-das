@@ -11,10 +11,10 @@ public class SubSequenceArray {
         int[] arr={1,2,3};
 
         // with out duplicate element in integer array
-      /*  List<List<Integer>> out=subSeq(arr);
+        List<List<Integer>> out=subSeq(arr);
         for (List<Integer> list:out) {
             System.out.println(list);
-        }*/
+        }
 
         // with  duplicate element in integer array
 

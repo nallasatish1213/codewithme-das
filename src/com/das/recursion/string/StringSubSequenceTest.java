@@ -6,14 +6,14 @@ public class StringSubSequenceTest {
 
     public static void main(String[] args) {
 
-        String input="abc";
+        String input="kipkipl";
         subSeq("",input);
 
         ArrayList<String> output= subSeqALReturn("",input);
-        System.out.println(output);
+      //  System.out.println(output);
 
         ArrayList<String> output2=subSequenceWithAscii("",input);
-        System.out.println(output2);
+      //  System.out.println(output2);
 
     }
 
