@@ -22,10 +22,9 @@ Output: [0,1]
 
     public static void main(String[] args) {
 
-        int[] arr={2,7,15,11,5,4};
-        int[] arr1= {3, 5, -4, 8, 11, 1, -1, 6, 7};
-                int target=18;
-        int target1=10;
+        int[] arr={2,7,15,11,5,4};  int target=18;
+        int[] arr1= {2, 5, -4, 8, 11, 1, -1, 6, 7};  int target1=10;
+
         System.out.println("twoSum : Find sum of two number: "+ Arrays.toString(twoSum(arr1,target1)));
 
         System.out.println("twoSum2 : Find sum of two number: "+ Arrays.toString(twoSum2(arr1,target1)));
@@ -36,6 +35,9 @@ Output: [0,1]
         for (Map.Entry<Integer, List<Integer>> l:result.entrySet()){
             System.out.println(l.getValue());
         }
+
+        System.out.println("twoSumDP : Find sum of two number: "+ Arrays.toString(twoSumDP(arr,target)));
+
     }
 
     public static  Map<Integer,List<Integer>> twoSumList(int[] nums, int target) {
@@ -111,6 +113,22 @@ Output: [0,1]
             map.put(nums[i],i);
             i++;
         }
+        return new int[]{-1,-1};
+    }
+
+
+    public static  int[] twoSumDP(int[] nums, int target) {
+       int l=0;
+       int r=1;
+       int sum=0;
+       while(l>=0 && r<=nums.length-1){
+           sum= nums[l]+nums[r];
+           if(sum==target){
+               return new int[]{l,r};
+           }
+           l++;
+           r++;
+       }
         return new int[]{-1,-1};
     }
 }

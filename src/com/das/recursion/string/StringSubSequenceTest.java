@@ -6,7 +6,7 @@ public class StringSubSequenceTest {
 
     public static void main(String[] args) {
 
-        String input="kipkipl";
+        String input="abc";
         subSeq("",input);
 
         ArrayList<String> output= subSeqALReturn("",input);
