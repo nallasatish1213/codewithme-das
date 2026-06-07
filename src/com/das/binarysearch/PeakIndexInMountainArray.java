@@ -5,8 +5,8 @@ public class PeakIndexInMountainArray {
     // find the moutain number or index
     public static void main(String[] args) {
         int[] peakArray= {0,2,4,5,6,7,5,3,1};
-        int peakArrayTarget=4;
-        int targetOut=-100;
+        int peakArrayTarget=1;
+      //  int targetOut=-100;
         //Todo: find the peaks of array
        int index=findMoutainArray(peakArray,peakArrayTarget);
         System.out.println("moutain index of given target: "+ index);
@@ -27,9 +27,11 @@ public class PeakIndexInMountainArray {
         boolean  asc=array[start]<array[end];
         while (start<=end){
             int mid=start+(end-start)/2;
+
             if(target==array[mid]){
                 return mid;
             }
+
             if(asc){
                 if(target<array[mid]){
                     end=mid-1;

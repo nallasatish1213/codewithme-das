@@ -14,7 +14,7 @@ public class QuickSort {
         quickSort(unSorted,0,unSorted.length-1);
         System.out.println(Arrays.toString(unSorted));
 
-        Arrays.sort(unSorted);
+       // Arrays.sort(unSorted);
 
     }
 
@@ -52,7 +52,6 @@ public class QuickSort {
             quickSort(arr,s,high);
 
         }
-
 
     }
 }

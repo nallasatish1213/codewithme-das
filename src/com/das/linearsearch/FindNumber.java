@@ -2,7 +2,7 @@ package com.das.linearsearch;
 
 import java.util.Arrays;
 
-public class FindNumber {
+public class  FindNumber {
 
     public static void main(String[] args) {
         int array[] = {18, 7, 22, 34, 2, 45, -7, 47, 15, 26};
@@ -109,6 +109,7 @@ public class FindNumber {
 
 
     static int minNumber(int[] array) {
+        // {18, 7, 22, 34, 2, 45, -7, 47, 15, 26}
         if (array.length == 0) {
             return -100;
         }
