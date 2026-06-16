@@ -60,7 +60,7 @@ public class RowColunmMatrix {
         }
 
             // now we have two rows
-           // check wheather the target is in the col of the 2 row
+           // check whether the target is in the col of the 2 row
 
             if(matrixArray[rStart][cMid] == target) {
                 return new int[] {rStart, cMid};

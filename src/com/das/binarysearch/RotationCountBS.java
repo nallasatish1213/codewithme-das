@@ -13,7 +13,7 @@ public class RotationCountBS {
 
     static int rotationCount(int[] array) {
         int pivot = findPivot(array);
-        // allways rotation count would be pivot + 1 if it is not sorted array
+        // always rotation count would be pivot + 1 if it is not sorted array
         // if it is sorted array: then 0
         return pivot + 1;
     }

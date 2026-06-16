@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class QuickSort {
 
+    // Approve
+
     // this is approach and try another approach
     public static void main(String[] args) {
 
@@ -11,14 +13,14 @@ public class QuickSort {
         // int[] sorted= mergeSorts(unSorted);
         // System.out.println(Arrays.toString(sorted));
 
-        quickSort(unSorted,0,unSorted.length-1);
+        quickSortRecev(unSorted,0,unSorted.length-1);
         System.out.println(Arrays.toString(unSorted));
 
        // Arrays.sort(unSorted);
 
     }
 
-    static void quickSort(int[] arr, int low, int high){
+    static void quickSortRecev(int[] arr, int low, int high){
 
         if(low>=high){
             return;
@@ -27,7 +29,7 @@ public class QuickSort {
         int s=low;
         int e=high;
         int m=s+(e-s)/2;
-        int pivot=arr[m];
+        int pivot=arr[m];  // like target
 
         while(s<=e){
             while(arr[s] < pivot){
@@ -47,10 +49,8 @@ public class QuickSort {
             }
 
             // now  my pivot is correct index please sort remaining element
-
-            quickSort(arr,low, e);
-            quickSort(arr,s,high);
-
+            quickSortRecev(arr,s,high);
+            quickSortRecev(arr,low, e);
         }
 
     }

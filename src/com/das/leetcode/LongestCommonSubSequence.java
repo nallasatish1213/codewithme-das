@@ -22,7 +22,7 @@ public class LongestCommonSubSequence {
 
 
     //Time complexity: O(n*n*n)
-    List<Integer> conutSubSequenceBF=longestCommonSubSequence_BruteForce(s1,s2);
+    List<Character> conutSubSequenceBF=longestCommonSubSequence_BruteForce(s1,s2);
     System.out.println("LC Sub sequence BF count: "+ conutSubSequenceBF);
     }
 
@@ -82,13 +82,13 @@ public class LongestCommonSubSequence {
     }
 
 
-    static  List<Integer>   longestCommonSubSequence_BruteForce(String s1, String s2) {
-        List<Integer> ans=new ArrayList<>();
+    static  List<Character>   longestCommonSubSequence_BruteForce(String s1, String s2) {
+        List<Character> ans=new ArrayList<>();
        // int i=0;
        for(int i =0; i< s1.length();i++) {
            for(int j =0; j<s2.length();j++) {
                if(s2.charAt(j)==s1.charAt(i)){
-                   ans.add(i);
+                   ans.add(s1.charAt(i));
                }
            }
        }
