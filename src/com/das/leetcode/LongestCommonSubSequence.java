@@ -6,7 +6,8 @@ import java.util.List;
 
 public class LongestCommonSubSequence {
     // BF: Brute Force
-    // RECURvice 
+    // RECURvice
+    // sub-sequence: we need to find out common sequence character in s1 by comparing s2
     public static void main(String[] args) {
     String s1="abcdef"; String s2="zcdemf";    //ans: 4
     // S1: abaaba,S2: babbab   ans: 4 (baba,abab)
