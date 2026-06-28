@@ -4,60 +4,67 @@ public class BSFindPeakInMoutain {
 
     public static void main(String[] args) {
         int[] arr= {0,2,4,6,7,8,5,3,1};
-        int target=3;
-       int peak= findPeak(arr);
+        int target=1;
 
-       int checkLeft=findNumberBS(arr,target,0, peak);
-       if(checkLeft != -1) {
-           System.out.printf("peaks: " + peak+": target: "+ checkLeft);
-       } else {
-        int checkRight  = findNumberBS(arr, target, peak + 1, arr.length-1);
-           System.out.printf("peaks: " + peak+": target: "+ checkRight);
-       }
+        int index=search(arr,target);
+        System.out.println(index);
+
+
     }
 
-    private static int findNumberBS(int[] arr, int target, int s, int e) {
-    // {0,2,4,6,7,8,5,3,1};
-        boolean asc=arr[s]<arr[e];
+    static int search(int[] arr, int target) {
+        int peak=peak(arr);
+        int leftSearch= binarySearch(arr,target,0,peak);
+        if (leftSearch != -1){
+            return leftSearch;
+            //System.out.println(leftSearch);
+        }
+        return binarySearch(arr,target,peak+1,arr.length-1);
+    }
 
-        while(s<=e){
-            int m=s+(e-s)/2;
-            if(target == arr[m]){
+    static int binarySearch(int[] arr, int t, int s, int e) {
+        boolean asc = arr[s] < arr[e];
+        while (s <= e) {
+
+            int m = s + (e - s) / 2;
+             if (t == arr[m]) {
                 return m;
             }
 
-            if(asc){
-                if(target<arr[m]){
-                    e=m-1;
+            if (asc) {
+                if (t < arr[m]) {
+                    e = m - 1;
                 } else {
-                    s=m+1;
+                    s = m + 1;
                 }
-            } else{
-                if(target>arr[m]){
-                    e=m-1;
+            } else {
+                if (t > arr[m]) {
+                    e = m - 1;
                 } else {
-                    s=m+1;
+                    s = m + 1;
                 }
             }
         }
+
         return -1;
     }
 
-    private static int findPeak(int[] arr) {
+    static int peak(int[] arr){
         int s=0;
         int e=arr.length-1;
-
-        while(s<e){
-
+        int countL=0;
+        while (s<e){
+            countL=countL+1;
             int m=s+(e-s)/2;
             if(arr[m]>arr[m+1]){
                 e=m;
-            }else {
+            } else{
                 s=m+1;
             }
         }
         return s;
     }
+
 
 
 }

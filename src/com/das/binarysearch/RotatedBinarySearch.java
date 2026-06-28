@@ -3,8 +3,8 @@ package com.das.binarysearch;
 public class RotatedBinarySearch {
 
     public static void main(String[] args) {
-        int[] array = {4, 5, 6, 7, 0, 1, 2, 3};
-        int pivotAndTarget = search(array, 6);
+        int[] array = {4, 5, 6, 7, 8, 9, 0, 1, 2, 3};
+        int pivotAndTarget = search(array, 2);
         System.out.println("finding pivot: " + pivotAndTarget);
     }
 
@@ -32,9 +32,9 @@ public class RotatedBinarySearch {
 
         while (s <= e) {
             int m = s + (e - s) / 2;
-            if (a[t] < a[m]) {
+            if (t < a[m]) {
                 e = m - 1;
-            } else if (a[t] > a[m]) {
+            } else if (t > a[m]) {
                 s = m + 1;
             } else {
                 return m;

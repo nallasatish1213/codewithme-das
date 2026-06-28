@@ -1,4 +1,4 @@
-package com.das;
+package com.test;
 
 public class Sorts {
 }

@@ -29,7 +29,7 @@ public class FindFirstAndLastIndex {
                 end=mid-1;
             } else if (target>input[mid]) {
                 start=mid+1;
-            }else {
+            } else {
                 ans= mid;
                 if(isStartIndex){
                     end=mid-1;

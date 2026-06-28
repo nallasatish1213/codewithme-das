@@ -1,16 +1,18 @@
 package com.das.sorts;
 
+import java.util.Arrays;
 import java.util.concurrent.Executors;
 
 public class SelectionSorts {
 
     public static void main(String[] args) {
-        int[] array = {24, 14, 1, 47, 5, 34, 56, 4, 19};
-        System.out.println("Given input array: ");
-        printArray(array);
+        int[] array = {24, 19, 14, 1, 47, 5, 34, 56, 4, 19};
         selectionSortsByDesc(array, array.length);
-     //   bubbleSort(array);
-        printArray(array);
+        System.out.println("Selection Sort By Desc: "+ Arrays.toString(array));
+
+        int[] array2 = {24, 14, 1, 47, 5, 34, 56, 4, 19, 1};
+        bubbleSort(array2);
+        System.out.println("bubbleSort: "+ Arrays.toString(array2));
 
         /* i=0
         1st: j=0: 14, 24, 1,  47, 5, 34, 56, 4, 19
@@ -63,6 +65,7 @@ public class SelectionSorts {
 
 //Executors
     static void bubbleSort(int[] array){
+        //24, 14, 1, 47, 5, 34, 56, 4, 19, 1
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j <array.length-i-1 ; j++) {
                 if(array[j+1]<array[j]){
@@ -74,17 +77,18 @@ public class SelectionSorts {
 
   //  int[] array = {24, 14, 1, 47, 5, 34, 56, 4, 19};
     private static void selectionSortsByDesc(int[] array, int n) {
+        // finding the max/min value and keeping right place
         for (int i = 0; i < n - 1; i++) {
             int max = i;
             for (int j = i+1; j < n; j++) {
-                if (array[j] > array[max]) {
+                if (array[j] > array[max]) { // j+1 > j
                     max = j;
                 }
             }
-            // swapIt( array[i], array[min]);
-            int temp = array[i];
+             swap( array, i, max);
+            /*int temp = array[i];
             array[i] = array[max];
-            array[max] = temp;
+            array[max] = temp;*/
         }
     }
 
@@ -96,10 +100,10 @@ public class SelectionSorts {
                     min = j;
                 }
             }
-                // swapIt( array[i], array[min]);
-                int temp = array[i];
+                 swap( array, i, min);
+                /*int temp = array[i];
                 array[i] = array[min];
-                array[min] = temp;
+                array[min] = temp;*/
         }
     }
 

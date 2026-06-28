@@ -2,10 +2,20 @@ package com.das.binarysearch;
 
 public class InfiniteArrayBS {
 
+    /*
+    * The interviewer is testing whether you understand:
+        1: Expand the window exponentially.
+        2: Binary search within the window.
+
+    * In a real Java array I'd need length or bounds checking. In the infinite-array problem,
+    * we assume an API that can access arbitrary indices, so exponential window expansion followed
+    * by binary search is sufficient
+    *
+    * */
     public static void main(String[] args) {
 
         int[] input={3,5,7,9,10,90,100,130,140,160,200};
-        System.out.println(findTargetWithoutusingLenght(input,10));
+        System.out.println(findTargetWithoutusingLenght(input,140));
 
     }
 

@@ -1,5 +1,7 @@
 package com.das.sorts;
 
+import java.util.Arrays;
+
 public class QuickSortMedianOfThree {
 
     public static void main(String[] args) {
@@ -8,9 +10,7 @@ public class QuickSortMedianOfThree {
 
         quickSort(arr, 0, arr.length - 1);
 
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void quickSort(int[] arr, int low, int high) {
@@ -48,7 +48,7 @@ public class QuickSortMedianOfThree {
     }
 
     private static int medianOfThree(int[] arr, int low, int high) {
-
+        //[ 1, 9, 12, 5, 8, 10, 3, 25, 7, 17 ]
         int mid = low + (high - low) / 2;
 
         if (arr[low] > arr[mid]) {

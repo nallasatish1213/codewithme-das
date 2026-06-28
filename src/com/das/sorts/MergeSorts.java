@@ -7,7 +7,7 @@ public class MergeSorts {
     public static void main(String[] args) {
       //  int[] unSorted={5,4,3,2,1};
 
-        int[] unSorted={6,3,1,7,9,4,8,2,5,11,12,13};
+        int[] unSorted={6,3,24,1,7,16,9,4,6,8,2,5,11,12,13};
        // int[] sorted= mergeSorts(unSorted);
        // System.out.println(Arrays.toString(sorted));
 
